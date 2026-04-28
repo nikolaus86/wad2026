@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="auth-card">
+    <div class="brand">LocalGPT</div>
+    <h1>Create account</h1>
+    <p class="muted">Passwords are saved only as hashes.</p>
+    {% if request.query_params.get('error') %}
+    <div class="alert">This login already exists.</div>
+    {% endif %}
+    <form method="post" action="/auth/ui/register" class="form">
+        <label>Login<input name="login" required minlength="3" autocomplete="username"></label>
+        <label>Password<input name="password" type="password" required minlength="6" autocomplete="new-password"></label>
+        <button type="submit">Create account</button>
+    </form>
+    <p class="switch">Already registered? <a href="/login">Sign in</a></p>
+</main>
+{% endblock %}

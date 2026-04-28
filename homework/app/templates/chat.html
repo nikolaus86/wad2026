@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div>
+                <div class="brand small">LocalGPT</div>
+                <p class="muted">{{ user.login }}</p>
+            </div>
+            <form method="post" action="/auth/ui/logout"><button class="ghost" type="submit">Logout</button></form>
+        </div>
+        <form method="post" action="/ui/chats" class="new-chat">
+            <input name="title" placeholder="Chat title" value="New chat">
+            <button>New</button>
+        </form>
+        <nav class="chat-list">
+            {% for item in chats %}
+            <a class="{% if item.id == chat.id %}active{% endif %}" href="/chats/{{ item.id }}">{{ item.title }}</a>
+            {% endfor %}
+        </nav>
+    </aside>
+    <main class="chat-panel" data-chat-id="{{ chat.id }}">
+        <header class="chat-header">
+            <div>
+                <h1>{{ chat.title }}</h1>
+                <p class="muted">Chat history is persisted in the database.</p>
+            </div>
+            <a class="docs-link" href="/docs">API docs</a>
+        </header>
+        <section class="messages" id="messages">
+            {% for message in chat.messages %}
+            <article class="message {{ message.role }}">
+                <div class="role">{{ message.role }}</div>
+                <p>{{ message.content }}</p>
+            </article>
+            {% else %}
+            <div class="welcome">
+                <h2>Ask anything</h2>
+                <p>If model.gguf is present, the local llama-cpp model will answer. Otherwise demo mode is used.</p>
+            </div>
+            {% endfor %}
+        </section>
+        <form id="ask-form" class="ask-form">
+            <textarea id="prompt" name="prompt" rows="3" placeholder="Message LocalGPT..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </main>
+</div>
+{% endblock %}

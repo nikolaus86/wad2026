@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div>
+                <div class="brand small">LocalGPT</div>
+                <p class="muted">Logged in as {{ user.login }}</p>
+            </div>
+            <form method="post" action="/auth/ui/logout"><button class="ghost" type="submit">Logout</button></form>
+        </div>
+        <form method="post" action="/ui/chats" class="new-chat">
+            <input name="title" placeholder="Chat title" value="New chat">
+            <button>Create chat</button>
+        </form>
+        <nav class="chat-list">
+            {% for item in chats %}
+            <a href="/chats/{{ item.id }}">{{ item.title }}</a>
+            {% else %}
+            <p class="muted">No chats yet.</p>
+            {% endfor %}
+        </nav>
+    </aside>
+    <main class="empty-state">
+        <h1>Start a new conversation</h1>
+        <p>Chats and messages are stored in PostgreSQL. Refresh sessions live in Redis for 30 days.</p>
+        <form method="post" action="/ui/chats" class="hero-create">
+            <input name="title" placeholder="For example: Web homework assistant">
+            <button>Create first chat</button>
+        </form>
+    </main>
+</div>
+{% endblock %}
