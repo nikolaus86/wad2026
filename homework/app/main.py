@@ -14,5 +14,5 @@ app.include_router(ui.router)
 
 
 @app.get("/health")
-def health():
+async def health():
     return {"status": "ok", "app": settings.app_name}

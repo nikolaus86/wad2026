@@ -2,14 +2,15 @@ import secrets
 from urllib.parse import urlencode
 
 import httpx
-from sqlalchemy.orm import Session
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import get_settings
 from app.models.user import User
 
 
 class GitHubOAuthService:
-    def __init__(self, db: Session):
+    def __init__(self, db: AsyncSession):
         self.db = db
         self.settings = get_settings()
 
@@ -50,21 +51,27 @@ class GitHubOAuthService:
             user_response.raise_for_status()
             return user_response.json()
 
-    def get_or_create_user(self, github_profile: dict) -> User:
+    async def get_or_create_user(self, github_profile: dict) -> User:
         github_id = str(github_profile["id"])
         login = github_profile.get("login") or f"github_{github_id}"
-        user = self.db.query(User).filter(User.github_id == github_id).first()
+
+        result = await self.db.execute(select(User).where(User.github_id == github_id))
+        user = result.scalar_one_or_none()
         if user:
             return user
 
         base_login = login
         suffix = 1
-        while self.db.query(User).filter(User.login == login).first():
+        while await self._login_exists(login):
             suffix += 1
             login = f"{base_login}_{suffix}"
 
         user = User(login=login, github_id=github_id, password_hash=None)
         self.db.add(user)
-        self.db.commit()
-        self.db.refresh(user)
+        await self.db.commit()
+        await self.db.refresh(user)
         return user
+
+    async def _login_exists(self, login: str) -> bool:
+        result = await self.db.execute(select(User.id).where(User.login == login).limit(1))
+        return result.scalar_one_or_none() is not None

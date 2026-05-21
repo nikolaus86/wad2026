@@ -1,13 +1,13 @@
 from fastapi import Cookie, Depends, Header, HTTPException, Request, status
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.security import decode_access_token
 from app.db.session import get_db
 from app.models.user import User
 
 
-def get_current_user(
-    db: Session = Depends(get_db),
+async def get_current_user(
+    db: AsyncSession = Depends(get_db),
     authorization: str | None = Header(default=None),
     access_token_cookie: str | None = Cookie(default=None, alias="access_token"),
 ) -> User:
@@ -26,18 +26,18 @@ def get_current_user(
     except Exception as exc:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid access token") from exc
 
-    user = db.get(User, user_id)
+    user = await db.get(User, user_id)
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not found")
     return user
 
 
-def get_optional_user(request: Request, db: Session = Depends(get_db)) -> User | None:
+async def get_optional_user(request: Request, db: AsyncSession = Depends(get_db)) -> User | None:
     token = request.cookies.get("access_token")
     if not token:
         return None
     try:
         payload = decode_access_token(token)
-        return db.get(User, int(payload["sub"]))
+        return await db.get(User, int(payload["sub"]))
     except Exception:
         return None
