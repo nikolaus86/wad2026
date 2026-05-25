@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "name": "Maya Sterling",
+    "initials": "MS",
+    "role": "Commercial / Narration",
+    "gender": "Female",
+    "language": "English",
+    "accent": "US Neutral",
+    "location": "Los Angeles, USA",
+    "rate": "$250 / project",
+    "availability": "Available today",
+    "ageRange": "25–35",
+    "tags": [
+      "Warm",
+      "Trustworthy",
+      "Soft",
+      "Luxury",
+      "Narration"
+    ],
+    "bio": "A calm and polished voice for premium brands, explainers, wellness apps, and educational videos.",
+    "demos": [
+      {
+        "title": "Luxury Ad",
+        "tone": "Warm and elegant",
+        "duration": "0:08",
+        "url": "/demos/maya-luxury-ad.wav",
+        "kind": "audio-file",
+        "script": "A softer voice can make a premium brand feel personal, calm, and unforgettable."
+      },
+      {
+        "title": "Documentary",
+        "tone": "Slow narration",
+        "duration": "0:09",
+        "url": "/demos/maya-documentary.wav",
+        "kind": "audio-file",
+        "script": "In the quiet light of morning, every story begins with a single human detail."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Leo Carter",
+    "initials": "LC",
+    "role": "Trailer / Games",
+    "gender": "Male",
+    "language": "English",
+    "accent": "British",
+    "location": "London, UK",
+    "rate": "$320 / project",
+    "availability": "2 days",
+    "ageRange": "30–45",
+    "tags": [
+      "Deep",
+      "Epic",
+      "Cinematic",
+      "Game",
+      "Trailer"
+    ],
+    "bio": "Powerful cinematic voice for game trailers, dark fantasy, action promos, and dramatic storytelling.",
+    "demos": [
+      {
+        "title": "Game Trailer",
+        "tone": "Dark and intense",
+        "duration": "0:07",
+        "url": "/demos/leo-game-trailer.wav",
+        "kind": "audio-file",
+        "script": "When the last gate falls, only one hero will stand between darkness and the world."
+      },
+      {
+        "title": "Movie Promo",
+        "tone": "Epic cinematic",
+        "duration": "0:08",
+        "url": "/demos/leo-movie-promo.wav",
+        "kind": "audio-file",
+        "script": "This summer, the mission changes, the rules break, and the clock never stops."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Nina Volkova",
+    "initials": "NV",
+    "role": "Animation / Character",
+    "gender": "Female",
+    "language": "Russian",
+    "accent": "Neutral RU",
+    "location": "Berlin, Germany",
+    "rate": "€180 / project",
+    "availability": "Available today",
+    "ageRange": "18–30",
+    "tags": [
+      "Bright",
+      "Funny",
+      "Character",
+      "Young",
+      "Energetic"
+    ],
+    "bio": "Expressive character voice for cartoons, mobile games, YouTube shows, and short-form content.",
+    "demos": [
+      {
+        "title": "Cartoon Hero",
+        "tone": "Young and bright",
+        "duration": "0:07",
+        "url": "/demos/nina-cartoon-hero.wav",
+        "kind": "audio-file",
+        "script": "Привет! Я готова к приключению. Только скажи куда бежать, и мы победим!"
+      },
+      {
+        "title": "Kids App",
+        "tone": "Friendly energy",
+        "duration": "0:08",
+        "url": "/demos/nina-kids-app.wav",
+        "kind": "audio-file",
+        "script": "Отлично! Нажми на звёздочку, повтори слово и собери все весёлые задания."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Daniel Moreau",
+    "initials": "DM",
+    "role": "Corporate / E-learning",
+    "gender": "Male",
+    "language": "French",
+    "accent": "Parisian",
+    "location": "Paris, France",
+    "rate": "€220 / project",
+    "availability": "Tomorrow",
+    "ageRange": "35–50",
+    "tags": [
+      "Clear",
+      "Professional",
+      "Corporate",
+      "Calm",
+      "Instructional"
+    ],
+    "bio": "Clean business voice for corporate training, internal videos, tutorials, and SaaS product explainers.",
+    "demos": [
+      {
+        "title": "Training Video",
+        "tone": "Clear corporate",
+        "duration": "0:08",
+        "url": "/demos/daniel-training-video.wav",
+        "kind": "audio-file",
+        "script": "Bienvenue dans cette formation. Nous allons avancer simplement, étape par étape."
+      },
+      {
+        "title": "SaaS Explainer",
+        "tone": "Friendly expert",
+        "duration": "0:08",
+        "url": "/demos/daniel-saas-explainer.wav",
+        "kind": "audio-file",
+        "script": "Avec notre plateforme, votre équipe gagne du temps et garde le contrôle."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sofia Reyes",
+    "initials": "SR",
+    "role": "Podcast / Lifestyle",
+    "gender": "Female",
+    "language": "Spanish",
+    "accent": "Latin American",
+    "location": "Madrid, Spain",
+    "rate": "€200 / project",
+    "availability": "3 days",
+    "ageRange": "25–40",
+    "tags": [
+      "Conversational",
+      "Natural",
+      "Friendly",
+      "Podcast",
+      "Lifestyle"
+    ],
+    "bio": "Natural and modern delivery for branded podcasts, lifestyle ads, travel videos, and social campaigns.",
+    "demos": [
+      {
+        "title": "Lifestyle Ad",
+        "tone": "Natural and sunny",
+        "duration": "0:08",
+        "url": "/demos/sofia-lifestyle-ad.wav",
+        "kind": "audio-file",
+        "script": "Cada día puede sentirse más ligero cuando eliges lo que de verdad te inspira."
+      },
+      {
+        "title": "Podcast Intro",
+        "tone": "Relaxed host",
+        "duration": "0:08",
+        "url": "/demos/sofia-podcast-intro.wav",
+        "kind": "audio-file",
+        "script": "Bienvenidos al episodio de hoy. Hablemos con calma, sin prisas y con buenas ideas."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Kenji Tanaka",
+    "initials": "KT",
+    "role": "Tech / Product Demo",
+    "gender": "Male",
+    "language": "Japanese",
+    "accent": "Tokyo",
+    "location": "Tokyo, Japan",
+    "rate": "$260 / project",
+    "availability": "Available today",
+    "ageRange": "28–45",
+    "tags": [
+      "Precise",
+      "Tech",
+      "Clean",
+      "Modern",
+      "Explainer"
+    ],
+    "bio": "Precise, modern voice for technology brands, apps, launch videos, product demos, and tutorials.",
+    "demos": [
+      {
+        "title": "App Demo",
+        "tone": "Modern tech",
+        "duration": "0:08",
+        "url": "/demos/kenji-app-demo.wav",
+        "kind": "audio-file",
+        "script": "Open the dashboard, choose your workflow, and launch the task in just one click."
+      },
+      {
+        "title": "Product Launch",
+        "tone": "Confident clean",
+        "duration": "0:08",
+        "url": "/demos/kenji-product-launch.wav",
+        "kind": "audio-file",
+        "script": "Meet the new system designed for faster teams, cleaner data, and smarter decisions."
+      }
+    ]
+  }
+]
